@@ -13,3 +13,4 @@ A sample to demonstrate ldap auth with node js
 
 #### Other tools required
 Apache Directory Studio - LDAP Browser
+https://directory.apache.org/studio/
