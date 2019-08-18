@@ -9,14 +9,14 @@ chai.use(chaiHttp);
 /*
 * Test the /POST route
 */
-describe('/POST login2', () => {
+describe('/POST loginandreturnuser', () => {
     it('it should login without error', (done) => {
         let x = {
             username: "prashanth",
             password: "1234"
         }
         chai.request(server)
-            .post('/login2')
+            .post('/loginandreturnuser')
             .send(x)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -29,14 +29,14 @@ describe('/POST login2', () => {
     });
 
 });
-describe('/POST login2', () => {
+describe('/POST loginandreturnuser', () => {
     it('it should not login with error', (done) => {
         let x = {
             username: "prashanth",
             password: "1234a"
         }
         chai.request(server)
-            .post('/login2')
+            .post('/loginandreturnuser')
             .send(x)
             .end((err, res) => {
                 res.should.have.status(401);

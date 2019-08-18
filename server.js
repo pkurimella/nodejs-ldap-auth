@@ -26,14 +26,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 
-app.post('/login', passport.authenticate('ldapauth', { session: false }), function (req, res) {
+app.post('/logincheck', passport.authenticate('ldapauth', { session: false }), function (req, res) {
 
   res.send({ status: 'ok' });
 
 });
 
 
-app.post('/login2', function (req, res, next) {
+app.post('/loginandreturnuser', function (req, res, next) {
   passport.authenticate('ldapauth', function (err, user, info) {
     console.log(info);
     console.log(err);
